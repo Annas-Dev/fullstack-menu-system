@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_BASE = 'http://localhost:3000';
+const API_BASE = 'https://fullstack-menu-system.onrender.com';
 
 export const getMenus = () => axios.get(`${API_BASE}/menus`);
 export const createMenu = (data: { name: string, parentId?: number }) => axios.post(`${API_BASE}/menus`, data);
