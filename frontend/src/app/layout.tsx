@@ -34,7 +34,6 @@ export default function RootLayout({
   } = theme.useToken();
 
   const pathname = usePathname();
-
   const breadcrumbItems = useMemo(() => {
     const parts = pathname.split("/").filter(Boolean);
     return [
@@ -52,7 +51,7 @@ export default function RootLayout({
       }),
     ];
   }, [pathname]);
-  const isMobile = !screen.width || screen.width < 768;
+  const isMobile = typeof window !== 'undefined' && window.screen.width < 768;
   return (
     <html lang="en">
       <body
