@@ -1,0 +1,20 @@
+generator client {
+  provider = "prisma-client-js"
+  output = "../../node_modules/.prisma/client"
+}
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+model Menu {
+  id        Int      @id @default(autoincrement())
+  name      String
+  depth     Int      @default(0)
+  parentId  Int?     // Removed @unique
+  parent    Menu?    @relation("MenuChildren", fields: [parentId], references: [id])
+  children  Menu[]   @relation("MenuChildren")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}

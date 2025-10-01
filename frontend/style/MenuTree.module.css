@@ -1,0 +1,55 @@
+/* components/MenuTree.module.css */
+.tree {
+    font-family: var(--font-sans);
+    line-height: 1.5;
+}
+
+.node {
+    position: relative;
+    padding-left: 20px;
+}
+
+.line {
+    position: absolute;
+    left: -10px;
+    top: 0;
+    bottom: -10px;
+    width: 1px;
+    background: #ccc;
+}
+
+.nodeContent {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 4px 0;
+}
+
+.arrow {
+    margin-right: 8px;
+    color: #666;
+    width: 12px;
+}
+
+.label {
+    flex: 1;
+    color: #333;
+}
+
+.addButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-left: auto;
+    padding: 0;
+    display: none;
+}
+
+.node:hover .addButton {
+    display: block;
+}
+
+.children {
+    margin-left: 12px;
+    border-left: 1px solid #eee;
+}
